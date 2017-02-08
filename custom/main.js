@@ -19,3 +19,9 @@ if (Meteor.isServer) {
     return MyList.find();
   });
 }
+
+Meteor.methods({
+    'counting': function(){
+        MyList.update({ _id: Meteor.user().username }, { $inc: { clickCount: 10 } });
+    }
+});

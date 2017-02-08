@@ -38,7 +38,8 @@ Template.count.events({
 
     if (Meteor.user())
       // console.log(MyList.findOne({_id: Meteor.user().username}))
-      MyList.update({ _id: Meteor.user().username }, { $inc: { clickCount: 10 } });
+      Meteor.call('counting');
+      // MyList.update({ _id: Meteor.user().username }, { $inc: { clickCount: 10 } });
     else
       instance.counter.set(instance.counter.get() + 1);
   },
