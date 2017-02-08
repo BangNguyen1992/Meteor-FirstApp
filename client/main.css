@@ -1,0 +1,155 @@
+body {
+  width: 100%;
+  margin: 0px;
+  font-family: 'Roboto';
+}
+
+
+/*Root font*/
+
+html {
+  font-size: 12px;
+}
+
+@media(max-width:768px) {
+  html {
+    font-size: 8px;
+  }
+}
+
+.body {
+  background: linear-gradient(rgba(46, 171, 250, 0.75), rgba(46, 171, 250, 0.85)), url(bg.png) no-repeat center center;
+}
+
+.center-container {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.horizon-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.vertical-container {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+}
+
+.header {
+  padding: 50px;
+  color: white;
+}
+
+.cardView {
+  padding: 6rem;
+  background-color: white;
+  border: 1px solid #cccccc;
+  border-radius: 2px;
+  transition: 0.3s ease-in-out;
+  margin: 20px;
+}
+
+.cardView:hover {
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px)
+}
+
+.cardView .hover {
+  margin-bottom: 5rem;
+}
+
+.cardView .hover:hover {
+  transform: translateY(-2px);
+}
+
+.my-btn {
+  background-color: #3498db;
+  color: white;
+  font-size: 1.5rem;
+  padding: 10px;
+  min-width: 100px;
+  border: 1px solid #cccccc;
+  border-radius: 0px;
+}
+
+.my-btn:hover {
+  background-color: white;
+  color: #3498db;
+  border: 1px solid #3498db;
+}
+
+.my-btn a {
+  color: white;
+}
+
+.my-btn:hover a {
+  color: #3498db;
+}
+
+.counter {
+  height: 200px;
+}
+
+.text-view {
+  background-color: white;
+  width: 50%;
+  margin: auto;
+}
+
+.text-view p {
+  font-size: 2rem;
+}
+
+
+/*Button with multi border*/
+
+.click {
+  border: 5px solid #2F661D;
+  width: 150px;
+  /*height: 200px;*/
+  background: #A6426B;
+  position: relative;
+  padding: 15px 20px;
+  border-radius: 50px;
+  /*margin: 20px;*/
+}
+
+.click a {
+  color: white;
+  font-size: 1.5rem;
+}
+
+.click:before {
+  content: " ";
+  position: absolute;
+  /*z-index: -1;*/
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  border: 5px outset #5282FB;
+  border-radius: 50px;
+}
+
+.click:after {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  right: -10px;
+  bottom: -10px;
+  background: #113007;
+  z-index: -1;
+  border-radius: 50px;
+}

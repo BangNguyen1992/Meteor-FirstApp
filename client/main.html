@@ -1,0 +1,92 @@
+<head>
+  <title>myapp</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="./main.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body class="body">
+  <div class="container">
+    <div class="vertical-container">
+      <h1 class="text-center header">Welcome to My App</h1>
+      {{> count}} 
+
+      {{#if currentUser}} 
+        {{> dashboard}} 
+      {{else}}
+
+      <div class="horizon-container">
+        <div class="flex-item  cardView">
+          {{> register}}</div>
+        <div class="flex-item  cardView">
+          {{> login}}</div>
+      </div>
+      {{/if}}
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+
+<!--TextView for counting-->
+<template name="count">
+  <div class="vertical-container counter">
+    <div class="center-container text-view text-center">
+      <p>User {{username}} pressed the button {{counter}} times.</p>
+    </div>
+    <div class="center-container">
+      <button class="click">
+      <a href="#">Nappula</a>
+      </button>
+    </div>
+  </div>
+</template>
+
+<!--Status when login-->
+<template name="dashboard">
+  <div class="cardView">
+    <p>You're logged in.</p>
+    <button class="my-btn"><a href="#" class="logout">Logout</a></button>
+  </div>
+</template>
+
+<!--Register-->
+<template name="register">
+  <form>
+    <div class=" sign-up">
+      <div class="vertical-container">
+        <div class="form-group">
+          <input class="form-control" type="username" name="registerUsername" placeholder="Username" />
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="password" name="registerPassword" placeholder="Password" />
+        </div>
+        <div class="form-group text-center">
+          <input class="my-btn signup" type="submit" value="Register">
+        </div>
+      </div>
+    </div>
+  </form>
+</template>
+
+<!--Login-->
+<template name="login">
+  <form>
+    <div class=" log-in">
+      <div class="vertical-container">
+        <div class="form-group">
+          <input class="form-control" type="username" name="loginUsername" placeholder="Username" />
+        </div>
+        <div class="form-group">
+          <input class="form-control" type="password" name="loginPassword" placeholder="Password" />
+        </div>
+        <div class="form-group text-center">
+          <input class="my-btn login" type="submit" value="Login">
+        </div>
+      </div>
+    </div>
+  </form>
+</template>
